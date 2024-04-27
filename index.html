@@ -1,0 +1,313 @@
+#!C:/Users/dell/AppData/Local/Programs/Python/Python39/python.exe
+import smtplib
+
+print("Content-type:text/html \r\n\r\n")
+
+
+import cgi, cgitb, pymysql
+cgitb.enable()
+con = pymysql.connect(host="localhost", user="root", password="", database="portfolio")
+cur = con.cursor()
+
+print("""
+    <html>
+    <head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script type = "text/javascript" src="function.js"></script>
+    
+    </head>
+    <body>
+       <!-- Preloader
+       <div class="preloader">
+        <div class="rainbow-marker-loader"></div>
+       </div>-->
+    
+    <!-- Navbar -->    
+    <div class="hero-section">
+        <nav class="navbar">
+            <div class="data-container">
+                <img src="images/logo-new.png" class="Logo">
+                <div id="menu-time" class="menu-data animate__animated ">
+                    <a onclick="closebar()"><i id="close" class="size fa-solid fa-xmark"></i></a>
+                    <a href="index.py">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#services">Services</a>
+                    <a href="#testimonial">Testimonial</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <a id="Menu-bar" onclick="menubar()"><i class="size-icon fa-solid fa-bars"></i></a>
+            </div>
+        </nav>
+    </div
+        
+    
+    <!-- banner -->
+    
+    <div class="banner-con-img">
+        <img src="images/banner.png" class="banner">
+        <div class="ban-content">
+            <div class="ban-title">
+                <h2>S</h2>
+                <h2>U</h2>
+                <h2>G</h2>
+                <h2>A</h2>
+                <h2>P</h2>
+                <h2>R</h2>
+                <h2>A</h2>
+                <h2>T</h2>
+                <h2>H</h2>
+                <h2>A</h2>
+            </div>
+            <h4>Graphic-Web Designer</h4>
+            <a href="#about">Know more About ME!</a>
+        </div>
+    </div>
+    
+    <!--About-->
+        <section class="about" id="about">
+            <div class="ab-title"><h2>ABOUT ME</h2></div>
+            <div class="ab-content">
+                <div class="ab-para">
+                    <h1>This is Sugapratha !</h1>
+                    <h3>Graphic & Web Designer, Full Stack Developer in the making!</h3>
+                    <p>Hello! I'm Sugapratha, an M.Sc. Data Science Graduate and a  passionate learner in the world of full-stack development with a flair for graphic design. Combining my technical skills with a keen eye for aesthetics, I delve into the realms of web development, constantly honing my craft to create immersive and engaging digital experiences. <br>
+                    Whether it's crafting elegant user interfaces or architecting robust backend systems, I thrive on the creative challenges that come with each project. 
+                    <br>With a commitment to lifelong learning and a dedication to pushing boundaries, I'm excited to bring my unique blend of skills and creativity to the table, helping to build innovative solutions that leave a lasting impact. Let's collaborate and bring your ideas to life!</p>
+                    
+                    <a href="#projects">Projects</a><a href="index.py">Back to Top</a>
+                </div>
+                <div class="ab-img">
+                    <img src="https://i.pinimg.com/564x/95/97/b6/9597b61509860fa5237c93083ff4214f.jpg">
+                </div>
+            </div>
+        </section>
+        
+        
+        <!--Projects-->
+        
+        <section class="projects" id="projects">
+            <div class="pro-content">
+                <h1> Some of my recent Projects are </h1>
+                
+                <!--Logo-->
+                <h2> 1. Logo Design </h2>
+                <div class="logo-flex">
+                    <div class="logo-card">
+                        <img src="images/robo-logo.jpg" alt="">
+                    </div>
+                    <div class="logo-card">
+                        <img src="images/2STEM.png" alt="">
+                    </div>
+                     <div class="logo-card">
+                        <img src="images/1logo.png" alt="">
+                    </div>
+                     <div class="logo-card">
+                        <img src="images/coffee (2).png" alt="coffee">
+                    </div>
+                    <div class="logo-card">
+                        <img src="images/cofee1.png" alt="coffee">
+                    </div>
+                    <div class="logo-card">
+                        <img src="images/coffee2.png" alt="coffee">
+                    </div>
+                    <div class="logo-card">
+                        <img src="images/coffee3.png" alt="coffee">
+                    </div>
+                    <div class="logo-card">
+                        <img src="images/waveslogo.png" alt="coffee">
+                    </div>
+                </div>
+                
+                <!--banner-->
+                <h2> 2. Banner Design </h2>
+                <div class="banner-flex">
+                    <div class="ban-card">
+                        <img src="images/banner.png" alt="" style="width:400px;">
+                    </div>
+                    <div class="ban-card">
+                        <img src="images/banner.png" alt="" style="width:400px;">
+                    </div>
+                </div>
+                
+                <!--Poster-->
+                <h2> 3. Poster Design </h2>
+                <div class="poster-flex">
+                    <div class="post-card">
+                        <img src="images/And&Nic.png" alt="" style="width:250px;" >
+                    </div>
+                    <div class="post-card">
+                        <img src="images/Bali.png" alt="" style="width:250px;">
+                    </div>
+                     <div class="post-card">
+                        <img src="images/Guwahati.png" alt="" style="width:250px;">
+                    </div>
+                     <div class="post-card">
+                        <img src="images/Munnar.png" alt="" style="width:250px;">
+                    </div>
+                </div>
+                
+                <!--Poster-->
+                <h2> 4. Book Cover Design </h2>
+                <div class="book-flex">
+                    <div class="book-card">
+                        <img src="images/2STEM.png" alt="">
+                    </div>
+                </div>
+               
+                <div class="back-link" > 
+                    <a href="#services">Services</a> <a href="index.py">Back to Top</a>
+                </div>
+            </div>
+        </section>
+        
+        
+         <!--Services-->
+        
+        <section class="services" id="services">
+            <div class="serve-content">
+                <h1> Services I have done! </h1>
+                
+                <!--Logo-->
+                <h2> Logo Design </h2>
+                <div class="serve-flex">
+                    <div class="serve-card">
+                        <img src="images/robo-logo.jpg" alt="">
+                        <div class="serve-para">
+                            <h3> AI on Health Care</h3>
+                            <p>This logo is created for National Level Symposium on AI on Health Care</p>
+                            <h3> 2023</h3>
+                        </div>
+                    </div>
+                    <div class="serve-card">
+                        <img src="images/2STEM.png" alt="">
+                        <div class="serve-para">
+                            <h3> The Power of STEM</h3>
+                            <p>This logo is created for the Four-day National Level Seminar on The Power of STEM: Solutions for a Sustainable Future </p>
+                            <h3> 2024</h3>
+                        </div>
+                    </div>
+                     <div class="serve-card">
+                        <img src="images/1logo.png" alt="">
+                        <div class="serve-para">
+                            <h3> Art Selling Site</h3>
+                            <p>This logo is created for the Main Project done using Html, CSS, Javascript, Bootstrap, Php and Mysql.</p>
+                            <h3> 2024</h3>
+                        </div>
+                    </div>
+                     <div class="serve-card">
+                        <img src="images/logo.png" alt="">
+                        <div class="serve-para">
+                            <h3> Portfolio</h3>
+                            <p>This logo symbolizes my name Sugapratha and it is created for the my Project done using Html, CSS, Javascript and Python as backend. </p>
+                            <h3> 2024</h3>
+                        </div>
+                    </div>
+                </div>
+                               
+                <div class="back-link" > 
+                    <a href="#testimonial">Testimonial</a> <a href="index.py">Back to Top</a>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!--Testimonial-->
+        <section class="testimonial" id="testimonial">
+            <h1>Testimonials</h1>
+            <div class="test-card">
+                <img src="images/profile1.png">
+                <p>"I was amazed by the quality of work Sugaprtha delivered for the logo. Despite being a beginner in the field, she showcased remarkable creativity and attention to detail. The logo she designed perfectly captured the essence of our brand, and we are more happy with the result."</p>
+            </div>
+            
+            <div class="test-card">
+                <img src="images/profile2.png">
+                <p>"Working with Sugapratha was a fantastic experience. As a novice designer, they demonstrated a keen eye for design and a willingness to understand our brand's identity. The logo she created for us was not only visually stunning but also resonated deeply with our target audience. I would highly recommend Sugapratha to anyone seeking a talented and enthusiastic designer."</p>
+            </div>
+            
+            <div class="test-card">
+                <img src="images/profile3.png">
+                <p>"Working with Sugapratha was a fantastic experience. As a novice designer, they demonstrated a keen eye for design and a willingness to understand our brand's identity. I would highly recommend Sugapratha to anyone seeking a talented and enthusiastic designer."</p>
+            </div>
+            
+            <div class="back-link" > 
+                <a href="#contact">Contact</a> <a href="index.py">Back to Top</a>
+            </div>
+        </section>
+        
+        <!--Contact-->
+        <section class="contact" id="contact">
+        <h1> Let's get in touch!</h1>
+            <div class="con-content">
+                <div class="contact-logo-con">
+                    <img src="images/logo-new.png">
+                    <p>"Have a question, request, or just want to chat? Don't hesitate to drop me a line!"</p>
+                </div>
+                 <form method="post">
+                    <div class="contact-details">
+                        <label for="username"> Name</label>
+                        <input type="text" name="username" autocomplete="off" required>
+                    </div>
+                     <div class="contact-details">
+                        <label for="email"> Email ID</label>
+                        <input type="text" name="email" autocomplete="off" required>
+                    </div>
+                    <div class="contact-details">
+                        <label for="state"> State</label>
+                        <input type="text" name="state" autocomplete="off"  required>
+                    </div>
+                    
+                    <div class="submit">
+                        <input type ="submit" name="submit" class="submit" value="Reach out!" required>
+                    </div>
+                </form>
+            </div>
+ """)
+
+form = cgi.FieldStorage()
+username = form.getvalue("username")
+email = form.getvalue("email")
+state = form.getvalue("state")
+sm = form.getvalue("submit")
+if sm != None:
+    query = """insert into details(username,  email, state) values('%s','%s','%s') """%(username, email, state)
+    cur.execute(query)
+
+    from_add="sugaprathalingam@gmail.com"
+    password= "zzaa ujds ecin knef"
+    to = email
+    subject="Thank you - Sugapratha"
+    body="This is a testing mail mam! I had error and rectified that mam. " \
+         "Kindly teach me how to insert pictures this mail with designs mam. Thank you teaching me this mam!!" \
+         "Thanks for contacting me and kindly let me know if you have any work regarding logos or other branding things. Bye!"
+    msg="subject:{}\n\n {} ".format(subject,body)
+    server=smtplib.SMTP('smtp.gmail.com:587')
+    server.ehlo()
+    server.starttls()
+    server.login(from_add,password)
+    server.sendmail(from_add, to, msg)
+    server.quit()
+    con.commit()
+    print("""
+        <script>
+            alert("Thanks for Contacting me")
+            location.href ="index.py";
+        </script> 
+    """)
+
+print("""
+        </section>
+        <!--Footer-->
+        <div class="footer">
+            <p>© 2024 Sugapratha. All rights reserved.</p>
+        </div>
+    </body>
+    </html>
+    <script src="https://kit.fontawesome.com/7103fc097b.js" crossorigin="anonymous"></script>
+""")
