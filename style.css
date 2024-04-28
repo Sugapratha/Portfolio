@@ -358,6 +358,7 @@ font-family: "Josefin Sans", sans-serif;
 
 @media (max-width:761px) {
     .menu-data {
+      width:100%;
         position: absolute;
         flex-direction: column;
         text-align: left;
