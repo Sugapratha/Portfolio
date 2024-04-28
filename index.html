@@ -1,17 +1,8 @@
-#!C:/Users/dell/AppData/Local/Programs/Python/Python39/python.exe
-import smtplib
-
-print("Content-type:text/html \r\n\r\n")
-
-
-import cgi, cgitb, pymysql
-cgitb.enable()
-con = pymysql.connect(host="localhost", user="root", password="", database="portfolio")
-cur = con.cursor()
-
-print("""
-    <html>
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
@@ -23,10 +14,10 @@ print("""
     
     </head>
     <body>
-       <!-- Preloader
+       <!-- Preloader-->
        <div class="preloader">
         <div class="rainbow-marker-loader"></div>
-       </div>-->
+       </div>
     
     <!-- Navbar -->    
     <div class="hero-section">
@@ -40,12 +31,11 @@ print("""
                     <a href="#projects">Projects</a>
                     <a href="#services">Services</a>
                     <a href="#testimonial">Testimonial</a>
-                    <a href="#contact">Contact</a>
                 </div>
                 <a id="Menu-bar" onclick="menubar()"><i class="size-icon fa-solid fa-bars"></i></a>
             </div>
         </nav>
-    </div
+    </div>
         
     
     <!-- banner -->
@@ -241,7 +231,7 @@ print("""
             </div>
         </section>
         
-        <!--Contact-->
+        <!--Contact
         <section class="contact" id="contact">
         <h1> Let's get in touch!</h1>
             <div class="con-content">
@@ -302,7 +292,7 @@ if sm != None:
     """)
 
 print("""
-        </section>
+        </section>-->
         <!--Footer-->
         <div class="footer">
             <p>© 2024 Sugapratha. All rights reserved.</p>
@@ -310,4 +300,4 @@ print("""
     </body>
     </html>
     <script src="https://kit.fontawesome.com/7103fc097b.js" crossorigin="anonymous"></script>
-""")
+<!-- """) -->
