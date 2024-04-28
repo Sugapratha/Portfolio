@@ -356,7 +356,7 @@ font-family: "Josefin Sans", sans-serif;
     display: none;
 }
 
-@media (max-width:761px) {
+@media (max-width:745px) {
     .menu-data {
       width:100%;
         position: absolute;
@@ -582,7 +582,7 @@ text-align: center;
 justify-content: center;
 align-items: center;
 }
-.logo-card,{
+.logo-card{
 padding: 30px;}
 
 .post-card{
@@ -605,7 +605,7 @@ width: 500px;
 }
 
 .book-card img{
-width: 300px;}
+width: 650px;}
 
 .back-link{
     text-align:right;
@@ -625,6 +625,8 @@ width: 300px;}
 background-color: #c6edc3;
     color: #537b2f;
 }
+
+/* Services */
 .services{
 padding: 30px;
 background-color: #97f09e;
@@ -668,6 +670,7 @@ color:#166636;
 color:#267043;
 }
 
+/* TESTIMONIAL */
 .testimonial{
 padding: 30px;
 background-image: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm00MjItMDQ3LWtxOTJ3eDl5LmpwZw.jpg');
